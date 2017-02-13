@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd /tmp
+
+rm -rf *channels_servers*
+wget https://github.com/CmosGit/pelisalacarta/archive/fix/channels_servers.zip
+
+unzip channels_servers.zip
+
+cd $USERPROFILE/AppData/Roaming/Kodi/addons 2>/dev/null
+cd /home/osmc/.kodi/addons                  2>/dev/null
+cd /storage/.kodi/addons                    2>/dev/null
+
+rm -rf plugin.video.pelisalacarta
+mv  /tmp/pelisalacarta-fix-channels_servers/python/main-classic  plugin.video.pelisalacarta
+
